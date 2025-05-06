@@ -1,0 +1,20 @@
+.category {
+  margin-top: 30px;
+  display: flex;
+  column-gap: 30px;
+  padding: 10px;
+  justify-content: space-between;
+  border: 1px solid gray;
+  border-radius: 10px;
+  background-color: var(--yellow);
+}
+
+.category li {
+  cursor: pointer;
+}
+
+.category__active {
+  font-weight: bold;
+  text-decoration: underline;
+  color: red;
+}

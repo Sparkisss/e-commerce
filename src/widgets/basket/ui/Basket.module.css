@@ -1,0 +1,21 @@
+.basket__wrap {
+  position: fixed;
+  top: 20px;
+  right: 20px;
+  z-index: 1000;
+  background-color: var(--grey);
+  color: rgba(240, 9, 9, 0.863);
+  /* border-radius: 50%; */
+  width: 50px;
+  height: 70px;
+  display: flex;
+  border-radius: 15px;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+}
+
+.basket__wrap img {
+  margin-bottom: 7px;
+  width: 30px;
+}
