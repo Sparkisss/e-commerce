@@ -1,15 +1,7 @@
-.arrivals {
+.arrivals__cards {
   padding-top: 120px;
   padding-bottom: 143px;
-}
-
-.arrivals__header {
-  margin-bottom: 100px;
-}
-
-.arrivals__cards {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: space-between;
-  column-gap: 30px;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  gap: 30px;
 }

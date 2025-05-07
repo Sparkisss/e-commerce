@@ -1,0 +1,16 @@
+.card__wrapper {
+  height: 700px;
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+  flex-shrink: 0;
+  margin-bottom: 30px;
+}
+
+.episode__list {
+  overflow-y: auto;
+  border: 1px solid black;
+  padding: 10px;
+  border-radius: 10px;
+  box-shadow: 1px 1px 1px 5px rgb(224, 221, 221);
+}

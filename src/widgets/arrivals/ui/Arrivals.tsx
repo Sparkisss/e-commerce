@@ -27,26 +27,24 @@ export const Arrivals = ({ addItem, removeItem }: ArrivalsProps) => {
   }
 
   return (
-    <section className={classes.arrivals}>
-      <div className="container">
-        <div className={classes.arrivals__header}>
-          <h2 className="title_2">NEW ARRIVALS</h2>
-          <Category
-            activeCategory={activeCategory}
-            setActiveCategory={setActiveCategory}
+    <section className="container">
+      <div>
+        <h2 className="title_2">NEW ARRIVALS</h2>
+        <Category
+          activeCategory={activeCategory}
+          setActiveCategory={setActiveCategory}
+        />
+        <SortPopup />
+      </div>
+      <div className={classes.arrivals__cards}>
+        {filteredCharacters.map((character) => (
+          <Card
+            key={character.id}
+            character={character}
+            addItem={addItem}
+            removeItem={removeItem}
           />
-          <SortPopup />
-        </div>
-        <div className={classes.arrivals__cards}>
-          {filteredCharacters.map((character) => (
-            <Card
-              key={character.id}
-              character={character}
-              addItem={addItem}
-              removeItem={removeItem}
-            />
-          ))}
-        </div>
+        ))}
       </div>
     </section>
   )

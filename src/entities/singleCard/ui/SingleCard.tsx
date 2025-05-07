@@ -1,3 +1,4 @@
+import classes from './SingleCard.module.css'
 import { useFetchCharacter } from '../model'
 import { Loader, Error } from 'shared/ui'
 import { useParams } from 'react-router'
@@ -8,6 +9,7 @@ export const SingleCard = () => {
   const { cardId } = useParams<{ cardId: string }>()
   const { data, loading, error } = useFetchCharacter(cardId || '1')
 
+  console.log(data)
   if (loading) return <Loader />
   if (error) return <Error error={error} />
 
@@ -15,5 +17,19 @@ export const SingleCard = () => {
     return <Error error="Персонаж не найден" />
   }
 
-  return <Card addItem={addItem} removeItem={removeItem} character={data} />
+  return (
+    <section className={classes.card__wrapper}>
+      <ul className={classes.episode__list}>
+        {data.episode.map((ep, i) => (
+          <li key={i}>{ep}</li>
+        ))}
+      </ul>
+      <Card
+        addItem={addItem}
+        removeItem={removeItem}
+        character={data}
+        onDetailsClick={() => window.history.back()}
+      />
+    </section>
+  )
 }

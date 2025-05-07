@@ -1,11 +1,16 @@
-import { useNavigate } from 'react-router'
-import { Button } from 'shared/ui/button'
-import { CardProps } from '../model/type'
+import { CardProps, useCardActions } from '../model'
 import classes from './Card.module.css'
+import { Button } from 'shared'
 
-export const Card = ({ character, addItem, removeItem }: CardProps) => {
+export const Card = ({
+  character,
+  addItem,
+  removeItem,
+  onDetailsClick,
+}: CardProps) => {
   const { name, gender, image, location, origin, species, status } = character
-  const navigate = useNavigate()
+
+  const { handleDetailsClick } = useCardActions(character, onDetailsClick)
 
   return (
     <article className={classes.card}>
@@ -40,7 +45,7 @@ export const Card = ({ character, addItem, removeItem }: CardProps) => {
             className={classes.card__controls_show}
             src="/myIcon/down.svg"
             alt="Show more info"
-            onClick={() => navigate(`/catalogue/${character.id}`)}
+            onClick={handleDetailsClick}
           />
         </div>
       </figure>

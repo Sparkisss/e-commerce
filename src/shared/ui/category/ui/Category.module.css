@@ -9,6 +9,10 @@
   background-color: var(--yellow);
 }
 
+.category__item {
+  font-size: large;
+}
+
 .category li {
   cursor: pointer;
 }
