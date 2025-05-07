@@ -1,20 +1,22 @@
 import {
+  charactersFilterByCategory,
+  ArrivalsProps,
   useFetchCharacters,
-  CategoryType,
-  Category,
-  Card,
-  Loader,
-  Error,
-} from 'shared'
-import { charactersFilterByCategory, ArrivalsProps } from '../model'
+} from '../model'
+import { CategoryType, Category, Loader, Error } from 'shared'
 import classes from './Arrivals.module.css'
 import { SortPopup } from 'features'
 import { useState } from 'react'
+import { Card } from 'shared'
 
 export const Arrivals = ({ addItem, removeItem }: ArrivalsProps) => {
   const [activeCategory, setActiveCategory] = useState<CategoryType>('all')
   const { data, loading, error } = useFetchCharacters()
-  const filteredCharacters = charactersFilterByCategory(data, activeCategory)
+  const characters = data?.results || []
+  const filteredCharacters = charactersFilterByCategory(
+    characters,
+    activeCategory
+  )
 
   if (loading) {
     return <Loader />

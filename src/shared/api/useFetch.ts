@@ -1,8 +1,7 @@
-import { Character } from 'shared/ui/card/model/type'
 import { useEffect, useState } from 'react'
 
-export const useFetchCharacters = () => {
-  const [data, setData] = useState<Character[]>([])
+export const useFetch = <T>(url: string) => {
+  const [data, setData] = useState<T | null>(null)
   const [loading, setLoading] = useState(true)
   const [error, setError] = useState<string | null>(null)
 
@@ -11,14 +10,10 @@ export const useFetchCharacters = () => {
 
     const fetchData = async () => {
       try {
-        const res = await fetch('https://rickandmortyapi.com/api/character', {
-          signal: controller.signal,
-        })
-        if (!res.ok) throw new Error('Ошибка сети')
+        const res = await fetch(url, { signal: controller.signal })
+        if (!res.ok) throw new Error('Network error')
         const json = await res.json()
-        if (!Array.isArray(json.results))
-          throw new Error('Некорректный формат данных')
-        setData(json.results)
+        setData(json)
       } catch (error) {
         let errorMessage = 'Неизвестная ошибка'
         if (error instanceof Error) {
@@ -34,7 +29,6 @@ export const useFetchCharacters = () => {
     }
     fetchData()
     return () => controller.abort()
-  }, [])
-
+  }, [url])
   return { data, loading, error }
 }

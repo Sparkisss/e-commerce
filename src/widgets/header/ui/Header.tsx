@@ -1,4 +1,5 @@
 import classes from './Header.module.css'
+import { Link } from 'react-router'
 
 export const Header = () => {
   return (
@@ -12,21 +13,21 @@ export const Header = () => {
           <nav className={classes.header__nav}>
             <ul>
               <li>
-                <a href="#!">CATALOGUE</a>
+                <Link to="/catalogue">CATALOGUE</Link>
               </li>
               <li>
-                <a href="#!">FASHION</a>
+                <Link to="/">FASHION</Link>
               </li>
               <li>
-                <a href="#!">FAVOURITE</a>
+                <Link to="/">FAVOURITE</Link>
               </li>
               <li>
-                <a href="#!">LIFESTYLE</a>
+                <Link to="/">LIFESTYLE</Link>
               </li>
               <li>
-                <a href="#!" className={classes.header__nav_btn}>
+                <Link to="/login" className={classes.header__nav_btn}>
                   SIGN UP
-                </a>
+                </Link>
               </li>
             </ul>
           </nav>

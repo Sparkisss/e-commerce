@@ -1,4 +1,3 @@
-// imports
 import { CATEGORIES } from 'shared/const/categories'
 import { CategoryProps } from '../model/types'
 import classes from './Category.module.css'

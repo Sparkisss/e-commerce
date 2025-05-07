@@ -1,7 +1,11 @@
-import { MainPage } from './pages/mainPage'
+import { Outlet } from 'react-router'
+import { Header } from 'widgets'
 
-function App() {
-  return <MainPage />
+export const App = () => {
+  return (
+    <div className="container">
+      <Header />
+      <Outlet />
+    </div>
+  )
 }
-
-export default App

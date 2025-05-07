@@ -1,19 +1,4 @@
-export type Character = {
-  id?: number
-  name: string
-  gender: string
-  image: string
-  species: string
-  status: string
-  origin: {
-    name: string
-    url: string
-  }
-  location: {
-    name: string
-    url: string
-  }
-}
+import { Character } from 'shared'
 
 export type CardProps = {
   character: Character

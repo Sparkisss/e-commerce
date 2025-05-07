@@ -1,16 +1,10 @@
-import { Arrivals, Header, Basket, Promo, Brands } from 'widgets'
-import { useBasket } from 'shared/hooks'
+import { Promo, Brands } from 'widgets'
 
 export const MainPage = () => {
-  const { amount, addItem, removeItem } = useBasket()
-
   return (
-    <div className="container">
-      <Header />
+    <main>
       <Promo />
       <Brands />
-      <Arrivals addItem={addItem} removeItem={removeItem} />
-      {amount > 0 && <Basket amount={amount} />}
-    </div>
+    </main>
   )
 }

@@ -1,9 +1,12 @@
+import { useNavigate } from 'react-router'
 import { Button } from 'shared/ui/button'
 import { CardProps } from '../model/type'
 import classes from './Card.module.css'
 
 export const Card = ({ character, addItem, removeItem }: CardProps) => {
   const { name, gender, image, location, origin, species, status } = character
+  const navigate = useNavigate()
+
   return (
     <article className={classes.card}>
       <figure className={classes.card__body}>
@@ -16,13 +19,13 @@ export const Card = ({ character, addItem, removeItem }: CardProps) => {
           }}
         />
         <figcaption className={classes.card__content}>
-          <h3 className={classes.card__title}>
+          <h3>
             {name} - {gender}
           </h3>
-          <div className={classes.card__muted}>
+          <div>
             from: {origin.name}, live: {location.name}
           </div>
-          <div className={classes.card__muted}>
+          <div>
             species: {species} status: {status}
           </div>
         </figcaption>
@@ -33,6 +36,12 @@ export const Card = ({ character, addItem, removeItem }: CardProps) => {
           <Button className={classes.btn} onClick={removeItem}>
             Del
           </Button>
+          <img
+            className={classes.card__controls_show}
+            src="/myIcon/down.svg"
+            alt="Show more info"
+            onClick={() => navigate(`/catalogue/${character.id}`)}
+          />
         </div>
       </figure>
     </article>

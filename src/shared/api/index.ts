@@ -1,1 +1,1 @@
-export { useFetchCharacters } from './useFetchCharacters'
+export { useFetch } from './useFetch'

@@ -1,4 +1,4 @@
-import { Character } from '../../../shared/ui/card/model/type'
+import { Character } from 'shared'
 
 export const charactersFilterByCategory = (
   characters: Character[],
