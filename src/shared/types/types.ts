@@ -19,6 +19,16 @@ export type Character = {
   created: string
 }
 
+export type ApiResponse = {
+  info: {
+    count: number
+    pages: number
+    next: string | null
+    prev: string | null
+  }
+  results: Character[]
+}
+
 export type CharacterFilters = {
   status?: 'alive' | 'dead' | 'unknown'
   gender?: 'female' | 'male' | 'genderless' | 'unknown'

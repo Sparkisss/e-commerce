@@ -1,0 +1,24 @@
+.pagination__wrapper {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.pagination__info {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.pagination__control img {
+  width: 50px;
+  cursor: pointer;
+}
+.pagination__control img:first-child {
+  transform: rotate(90deg);
+}
+.pagination__control img:last-child {
+  transform: rotate(-90deg);
+}

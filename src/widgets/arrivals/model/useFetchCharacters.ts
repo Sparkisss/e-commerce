@@ -1,7 +1,10 @@
+import type { Character, ApiResponse } from 'shared'
 import { useFetch, CharacterFilters } from 'shared'
-import type { Character } from 'shared'
 
-export const useFetchCharacters = (filters: CharacterFilters = {}) => {
+export const useFetchCharacters = (
+  filters: CharacterFilters = {},
+  page = 1
+) => {
   const params = new URLSearchParams()
   if (filters.status) {
     const statusValue = filters.status === 'unknown' ? '' : filters.status
@@ -17,7 +20,8 @@ export const useFetchCharacters = (filters: CharacterFilters = {}) => {
   if (filters.name) {
     params.set('name', filters.name)
   }
+  params.set('page', page.toString())
   const queryString = params.toString()
   const url = `https://rickandmortyapi.com/api/character/${queryString ? `?${queryString}` : ''}`
-  return useFetch<{ results: Character[] }>(url)
+  return useFetch<{ info: ApiResponse['info']; results: Character[] }>(url)
 }
