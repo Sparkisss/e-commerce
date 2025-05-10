@@ -1,1 +1,1 @@
-export { SortPopup } from './sortPopup'
+export { CharacterFilterControls } from './CharacterFilterControls'

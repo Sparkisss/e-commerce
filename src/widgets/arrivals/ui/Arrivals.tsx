@@ -1,22 +1,17 @@
-import {
-  charactersFilterByCategory,
-  ArrivalsProps,
-  useFetchCharacters,
-} from '../model'
-import { CategoryType, Category, Loader, Error } from 'shared'
-import classes from './Arrivals.module.css'
-import { SortPopup } from 'features'
-import { useState } from 'react'
-import { Card } from 'shared'
+import { ArrivalsProps, useFetchCharacters } from '../model'
+import { Loader, Error, CharacterFilters } from 'shared'
+import { CharacterList } from 'entities/characterList'
+import { CharacterFilterControls } from 'features'
+import { useState, useCallback } from 'react'
 
 export const Arrivals = ({ addItem, removeItem }: ArrivalsProps) => {
-  const [activeCategory, setActiveCategory] = useState<CategoryType>('all')
-  const { data, loading, error } = useFetchCharacters()
+  const [filters, setFilters] = useState<CharacterFilters>({})
+  const { data, loading, error } = useFetchCharacters(filters)
   const characters = data?.results || []
-  const filteredCharacters = charactersFilterByCategory(
-    characters,
-    activeCategory
-  )
+
+  const handleSetFilters = useCallback((newFilters: CharacterFilters) => {
+    setFilters((prev) => ({ ...prev, ...newFilters }))
+  }, [])
 
   if (loading) {
     return <Loader />
@@ -28,24 +23,12 @@ export const Arrivals = ({ addItem, removeItem }: ArrivalsProps) => {
 
   return (
     <section className="container">
-      <div>
-        <h2 className="title_2">NEW ARRIVALS</h2>
-        <Category
-          activeCategory={activeCategory}
-          setActiveCategory={setActiveCategory}
-        />
-        <SortPopup />
-      </div>
-      <div className={classes.arrivals__cards}>
-        {filteredCharacters.map((character) => (
-          <Card
-            key={character.id}
-            character={character}
-            addItem={addItem}
-            removeItem={removeItem}
-          />
-        ))}
-      </div>
+      <CharacterFilterControls setFilters={handleSetFilters} />
+      <CharacterList
+        characters={characters}
+        addItem={addItem}
+        removeItem={removeItem}
+      />
     </section>
   )
 }

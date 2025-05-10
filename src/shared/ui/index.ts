@@ -1,5 +1,6 @@
 export { Button } from './button'
-export { Category } from './category'
 export { Error } from './status'
 export { Loader } from './status'
 export { Card } from './card'
+export { FilterDropdown } from './filterDropdown'
+export { FilterInput } from './filterInput'

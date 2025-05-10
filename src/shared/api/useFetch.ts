@@ -11,9 +11,16 @@ export const useFetch = <T>(url: string) => {
     const fetchData = async () => {
       try {
         const res = await fetch(url, { signal: controller.signal })
-        if (!res.ok) throw new Error('Network error')
+        if (!res.ok) {
+          if (res.status === 404) {
+            setData({ results: [] } as T)
+            setError(null)
+            return
+          } else throw new Error('Network error')
+        }
         const json = await res.json()
         setData(json)
+        setError(null)
       } catch (error) {
         let errorMessage = 'Неизвестная ошибка'
         if (error instanceof Error) {
@@ -23,6 +30,7 @@ export const useFetch = <T>(url: string) => {
           errorMessage = error.message
         }
         setError(errorMessage)
+        setData(null)
       } finally {
         setLoading(false)
       }

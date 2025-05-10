@@ -1,0 +1,14 @@
+.dropdown__wrap {
+  display: flex;
+  gap: 25px;
+  margin-bottom: 65px;
+}
+.input__wrap {
+  display: flex;
+  gap: 20px;
+  margin-bottom: 40px;
+}
+
+.input__wrap > * {
+  flex: 1 1 50%;
+}

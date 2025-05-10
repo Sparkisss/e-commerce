@@ -18,3 +18,10 @@ export type Character = {
   url: string
   created: string
 }
+
+export type CharacterFilters = {
+  status?: 'alive' | 'dead' | 'unknown'
+  gender?: 'female' | 'male' | 'genderless' | 'unknown'
+  name?: string
+  species?: string
+}
