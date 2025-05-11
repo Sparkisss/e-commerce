@@ -1,15 +1,16 @@
+import { useGetCharacterByIdQuery } from 'entities/character/api/characterApiSlice'
 import classes from './SingleCard.module.css'
-import { useFetchCharacter } from '../model'
 import { Loader, Error, Card } from 'shared'
 import { useParams } from 'react-router'
 
 export const SingleCard = () => {
   const { cardId } = useParams<{ cardId: string }>()
-  const { data, loading, error } = useFetchCharacter(cardId || '1')
+  const { data, isLoading, isError, error } = useGetCharacterByIdQuery(
+    cardId || '1'
+  )
 
-  if (loading) return <Loader />
-  if (error) return <Error error={error} />
-
+  if (isLoading) return <Loader />
+  if (isError) return <Error error={error} />
   if (!data) {
     return <Error error="Персонаж не найден" />
   }
