@@ -4,9 +4,7 @@ import { useState, useCallback, useEffect } from 'react'
 import { CharacterList } from 'entities/characterList'
 import { CharacterFilterControls } from 'features'
 
-export const Arrivals = ({
-  addItem,
-  removeItem,
+export const Arrivals = ({  
   currentPage,
   setTotalPage,
 }: ArrivalsProps) => {
@@ -36,9 +34,7 @@ export const Arrivals = ({
     <section className="container">
       <CharacterFilterControls setFilters={handleSetFilters} />
       <CharacterList
-        characters={characters}
-        addItem={addItem}
-        removeItem={removeItem}
+        characters={characters}        
       />
     </section>
   )

@@ -1,5 +1,5 @@
 export { Arrivals } from './arrivals'
-export { Basket } from './basket'
+export { BasketIndicator } from './basketIndicator'
 export { Brands } from './brands'
 export { Header } from './header'
 export { Promo } from './promo'

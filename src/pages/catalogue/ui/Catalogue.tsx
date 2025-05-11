@@ -1,5 +1,5 @@
-import { useBasket, Pagination, usePagination } from 'shared'
-import { Arrivals, Basket } from 'widgets'
+import { Pagination, usePagination } from 'shared'
+import { Arrivals } from 'widgets'
 import { useState } from 'react'
 
 export const Catalogue = () => {
@@ -7,15 +7,9 @@ export const Catalogue = () => {
   const { currentPage, goToNextPage, goToPrevPage, isFirstPage, isLastPage } =
     usePagination({ totalPages: totalPage })
 
-  const { amount, addItem, removeItem } = useBasket()
   return (
     <main>
-      <Arrivals
-        addItem={addItem}
-        removeItem={removeItem}
-        currentPage={currentPage}
-        setTotalPage={setTotalPage}
-      />
+      <Arrivals currentPage={currentPage} setTotalPage={setTotalPage} />
       <Pagination
         pagination={{
           totalPage,
@@ -26,7 +20,6 @@ export const Catalogue = () => {
           isLastPage,
         }}
       />
-      {amount > 0 && <Basket amount={amount} />}
     </main>
   )
 }
