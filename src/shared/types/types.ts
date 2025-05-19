@@ -1,10 +1,10 @@
 export type Character = {
   id: number
   name: string
-  status: string
+  status: 'alive' | 'dead' | 'unknown'
   species: string
   type: string
-  gender: string
+  gender: 'female' | 'male' | 'genderless' | 'unknown'
   origin: {
     name: string
     url: string
@@ -34,4 +34,8 @@ export type CharacterFilters = {
   gender?: 'female' | 'male' | 'genderless' | 'unknown'
   name?: string
   species?: string
+}
+
+export type ItemSliceType = {
+  items: string[]
 }

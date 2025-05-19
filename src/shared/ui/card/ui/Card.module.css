@@ -13,42 +13,22 @@
 
 .card__img {
   border-radius: 10px;
+  cursor: pointer;
 }
 
 .card__content {
   flex: 1;
+  margin-bottom: 10px;
 }
 
 .card__controls {
   margin-top: auto;
   display: flex;
+  justify-content: center;
   max-height: 10%;
 }
 
 .btn {
   background: black;
-  margin-left: 10px;
-}
-
-.card__controls_show {
-  width: 55px;
-  transform: rotate(-90deg);
-  margin-left: auto;
-  cursor: pointer;
-}
-
-.card__controls_show:hover {
-  animation: pulse 1s infinite;
-}
-
-@keyframes pulse {
-  0% {
-    opacity: 0.6;
-  }
-  50% {
-    opacity: 1;
-  }
-  100% {
-    opacity: 0.6;
-  }
+  width: 50%;
 }

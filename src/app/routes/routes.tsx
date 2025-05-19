@@ -1,4 +1,4 @@
-import { MainPage, NotFound, Login, Catalogue } from 'pages'
+import { MainPage, NotFound, Login, Catalogue, Basket, Selected } from 'pages'
 import { SingleCard } from 'entities/singleCard'
 
 export const routes = [
@@ -13,6 +13,14 @@ export const routes = [
   {
     path: 'catalogue/:cardId',
     element: <SingleCard />,
+  },
+  {
+    path: '/basket',
+    element: <Basket />,
+  },
+  {
+    path: '/selected',
+    element: <Selected />,
   },
   {
     path: '/login',

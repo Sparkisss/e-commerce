@@ -19,10 +19,10 @@ export const Header = () => {
                 <Link to="/">FASHION</Link>
               </li>
               <li>
-                <Link to="/">FAVOURITE</Link>
+                <Link to="/basket">BASKET</Link>
               </li>
               <li>
-                <Link to="/">LIFESTYLE</Link>
+                <Link to="/selected">SELECTED</Link>
               </li>
               <li>
                 <Link to="/login" className={classes.header__nav_btn}>

@@ -1,10 +1,11 @@
 import { characterApi } from 'entities/character/api/characterApiSlice'
+import { basketReducer, favoriteReducer } from 'entities'
 import { configureStore } from '@reduxjs/toolkit'
-import { basketReducer } from 'entities'
 
 export const store = configureStore({
   reducer: {
     basket: basketReducer,
+    favorite: favoriteReducer,
     [characterApi.reducerPath]: characterApi.reducer,
   },
   middleware: (getDefaultMiddleware) =>

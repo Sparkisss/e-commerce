@@ -1,0 +1,10 @@
+.layout {
+  display: flex;
+  gap: 2rem;
+}
+.sidebar {
+  position: fixed;
+  right: 2rem;
+  top: 120px;
+  width: 30vw;
+}

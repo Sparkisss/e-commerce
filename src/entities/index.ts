@@ -1,4 +1,6 @@
 export { SingleCard } from './singleCard/index'
 export { CharacterList } from './characterList'
-export * from './basket'
+export { ShowItems } from './items'
+export * from './basketSlice'
+export * from './favoritesSlice'
 export * from './character'

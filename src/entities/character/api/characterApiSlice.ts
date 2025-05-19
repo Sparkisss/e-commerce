@@ -10,6 +10,9 @@ export const characterApi = createApi({
     getCharacterById: builder.query<Character, string>({
       query: (id) => `character/${id}`,
     }),
+    getMultipleCharacters: builder.query<Character[], string[]>({
+      query: (ids) => `character/${ids.join(' ,')}`,
+    }),
     getCharacters: builder.query<
       { info: ApiResponse['info']; results: Character[] },
       {
@@ -35,4 +38,8 @@ export const characterApi = createApi({
   }),
 })
 
-export const { useGetCharacterByIdQuery, useGetCharactersQuery } = characterApi
+export const {
+  useGetCharacterByIdQuery,
+  useGetMultipleCharactersQuery,
+  useGetCharactersQuery,
+} = characterApi
