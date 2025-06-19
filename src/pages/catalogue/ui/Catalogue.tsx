@@ -4,12 +4,22 @@ import { useState } from 'react'
 
 export const Catalogue = () => {
   const [totalPage, setTotalPage] = useState(1)
-  const { currentPage, goToNextPage, goToPrevPage, isFirstPage, isLastPage } =
-    usePagination({ totalPages: totalPage })
+  const {
+    currentPage,
+    setPage,
+    goToNextPage,
+    goToPrevPage,
+    isFirstPage,
+    isLastPage,
+  } = usePagination({ totalPages: totalPage })
 
   return (
     <main>
-      <Arrivals currentPage={currentPage} setTotalPage={setTotalPage} />
+      <Arrivals
+        currentPage={currentPage}
+        setTotalPage={setTotalPage}
+        setPage={setPage}
+      />
       <Pagination
         pagination={{
           totalPage,

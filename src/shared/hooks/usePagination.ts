@@ -1,4 +1,4 @@
-import { useState } from 'react'
+import { useCallback, useState } from 'react'
 
 type UsePaginationProps = {
   initialPage?: number
@@ -19,10 +19,13 @@ export const usePagination = ({
     setCurrentPage((prev) => Math.max(prev - 1, 1))
   }
 
-  const setPage = (page: number) => {
-    const safePage = Math.max(1, Math.min(page, totalPages))
-    setCurrentPage(safePage)
-  }
+  const setPage = useCallback(
+    (page: number) => {
+      const safePage = Math.max(1, Math.min(page, totalPages))
+      setCurrentPage(safePage)
+    },
+    [totalPages]
+  )
 
   return {
     currentPage,

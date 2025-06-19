@@ -1,7 +1,7 @@
 import { createSlice } from '@reduxjs/toolkit'
-import { itemSliceType } from 'shared'
+import { ItemSliceType } from 'shared'
 
-const initialState: itemSliceType = {
+const initialState: ItemSliceType = {
   items: [],
 }
 

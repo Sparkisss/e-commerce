@@ -1,4 +1,3 @@
-// Button.tsx
 import { ComponentProps, ElementType } from 'react'
 import classes from './Button.module.css'
 

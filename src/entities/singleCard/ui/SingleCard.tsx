@@ -12,7 +12,7 @@ export const SingleCard = () => {
   if (isLoading) return <Loader />
   if (isError) return <Error error={error} />
   if (!data) {
-    return <Error error="Персонаж не найден" />
+    return <Error error="Character was not found" />
   }
 
   return (

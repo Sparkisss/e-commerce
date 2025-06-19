@@ -1,4 +1,5 @@
 import classes from './Promo.module.css'
+import { Link } from 'react-router-dom'
 import classNames from 'classnames'
 
 export const Promo = () => {
@@ -26,9 +27,9 @@ export const Promo = () => {
               Live for Influential and Innovative fashion!
             </div>
             <div className={classes.promo__btn_wrapper}>
-              <a href="#!" className={classes.promo__btn}>
+              <Link to="/catalogue" className={classes.promo__btn}>
                 Shop Now
-              </a>
+              </Link>
             </div>
           </div>
           <div>

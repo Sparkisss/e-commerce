@@ -1,7 +1,7 @@
 import { ItemSliceType } from 'shared'
 
 export const selectIsInBasket =
-  (id: string) => (state: { basket: ItemSliceType }) =>
+  (id: number) => (state: { basket: ItemSliceType }) =>
     state.basket.items.includes(id)
 
 export const selectedBasketItemIds = (state: { basket: ItemSliceType }) =>
