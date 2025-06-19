@@ -15,4 +15,5 @@ export enum SortGenderType {
 
 export type CharacterFilterControlsProps = {
   setFilters: (filters: CharacterFilters) => void
+  setPage: (page: number) => void
 }

@@ -5,7 +5,11 @@ import { CharacterFilterControls } from 'features'
 import { CharacterList } from 'entities'
 import { ArrivalsProps } from '../model'
 
-export const Arrivals = ({ currentPage, setTotalPage }: ArrivalsProps) => {
+export const Arrivals = ({
+  currentPage,
+  setTotalPage,
+  setPage,
+}: ArrivalsProps) => {
   const [filters, setFilters] = useState<CharacterFilters>({})
   const { data, error, isLoading, isError } = useGetCharactersQuery({
     page: currentPage,
@@ -23,17 +27,15 @@ export const Arrivals = ({ currentPage, setTotalPage }: ArrivalsProps) => {
     }
   }, [data, setTotalPage])
 
-  if (isLoading) {
-    return <Loader />
-  }
-
-  if (isError) {
-    return <Error error={error} />
-  }
+  if (isLoading) return <Loader />
+  if (isError) return <Error error={error} />
 
   return (
     <section className="container">
-      <CharacterFilterControls setFilters={handleSetFilters} />
+      <CharacterFilterControls
+        setFilters={handleSetFilters}
+        setPage={setPage}
+      />
       <CharacterList characters={characters} />
     </section>
   )

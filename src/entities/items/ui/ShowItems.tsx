@@ -1,6 +1,6 @@
 import { useGetMultipleCharactersQuery } from 'entities/character/api/characterApiSlice'
 import { Error, ItemSliceType, Loader } from 'shared'
-import { CardItem } from 'widgets'
+import { CardItem } from 'shared'
 
 export const ShowItems = ({ items }: ItemSliceType) => {
   const { data, isLoading, isError, error } =

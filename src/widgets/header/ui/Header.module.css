@@ -51,3 +51,18 @@ a.header__nav_btn {
   letter-spacing: -0.03em;
   color: white;
 }
+
+@media (max-width: 1250px) {
+  .header__nav {
+    font-size: 16px;
+  }
+  .header__logo span {
+    font-size: 30px;
+    line-height: 1.2;
+  }
+  .header__nav_btn,
+  a.header__nav_btn {
+    font-size: 20px;
+    line-height: 1.2;
+  }
+}

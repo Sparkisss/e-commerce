@@ -10,12 +10,14 @@ import { useEffect } from 'react'
 
 export const CharacterFilterControls = ({
   setFilters,
+  setPage,
 }: CharacterFilterControlsProps) => {
   const { sortedBy, handleSort } = useSort()
 
   useEffect(() => {
     setFilters(sortedBy)
-  }, [sortedBy, setFilters])
+    setPage(1)
+  }, [sortedBy, setFilters, setPage])
 
   const handleSpeciesChange = (species: string) => {
     handleSort({ species })

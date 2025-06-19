@@ -1,10 +1,10 @@
 import classes from './CardItem.module.css'
 export const Control = () => {
   return (
-    <div className={classes.control}>
-      <div>+</div>
-      <div>1</div>
+    <article className={classes.control}>
       <div>-</div>
-    </div>
+      <div>1</div>
+      <div>+</div>
+    </article>
   )
 }

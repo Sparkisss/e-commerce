@@ -8,7 +8,6 @@ export const FilterDropdown = <T,>({
   onSelect,
 }: FilterDropdownProps<T>) => {
   const [isOpen, setIsOpen] = useState(false)
-
   const handleClick = () => {
     setIsOpen((prev) => !prev)
   }
