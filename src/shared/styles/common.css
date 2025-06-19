@@ -1,6 +1,7 @@
 :root {
   --colorDark: #000;
   --colorLight: #ffffff;
+  --lightGray: #f4f6f5;
   --yellow: #ebd96b;
   --gray: #7f7f7f;
 
@@ -15,8 +16,11 @@
   --size-md: 22px;
   --size-bd: 30px;
   --size-lg: 40px;
+  --size-el: 64px;
+  --size-eb: 96px;
 
-  --borderRadius: 7px;
+  --borderRadius: 10px;
+  --borderRadiusBig: 60px;
 
   --transition: all 0.3s ease;
 }
