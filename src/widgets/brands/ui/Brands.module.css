@@ -5,6 +5,24 @@
 
 .brands__list {
   display: flex;
-  column-gap: 120px;
+  column-gap: var(--spacing-md);
   mix-blend-mode: multiply;
+}
+
+.brands__list li {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex: 1 1 auto;
+}
+
+@media (max-width: 768px) {
+  .brands {
+    padding: 40px 0 35px;
+  }
+}
+@media (max-width: 520px) {
+  .brands {
+    padding: 20px 0 15px;
+  }
 }
