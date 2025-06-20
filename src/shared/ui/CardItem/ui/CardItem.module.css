@@ -10,6 +10,9 @@
   padding: 5px;
   border-radius: 10px;
 }
+.InfoImg {
+  cursor: pointer;
+}
 .info {
   width: 50%;
   display: flex;

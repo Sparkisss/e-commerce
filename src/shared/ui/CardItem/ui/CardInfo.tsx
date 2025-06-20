@@ -5,10 +5,12 @@ import {
   selectedFavorItemIds,
 } from 'entities'
 import { useAppDispatch, useAppSelector } from 'shared/types/redux'
+import { useCardActions } from 'shared/ui/card/model'
 import classes from './CardItem.module.css'
 import { ItemProps } from '../model/types'
 
 export const CardInfo = ({ character }: ItemProps) => {
+  const { handleDetailsClick } = useCardActions(character)
   const dispatch = useAppDispatch()
   const favorites = useAppSelector(selectedFavorItemIds)
   const isFavorite = favorites.includes(character.id)
@@ -20,7 +22,12 @@ export const CardInfo = ({ character }: ItemProps) => {
 
   return (
     <>
-      <img src={character.image} alt="image" />
+      <img
+        className={classes.InfoImg}
+        onClick={handleDetailsClick}
+        src={character.image}
+        alt="image"
+      />
       <div className={classes.info}>
         <div className={classes.name}>{character.name} - human</div>
         <div className={classes.text}>gender: {character.gender}</div>
