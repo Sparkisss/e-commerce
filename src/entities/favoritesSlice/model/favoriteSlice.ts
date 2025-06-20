@@ -1,7 +1,7 @@
 import { createSlice } from '@reduxjs/toolkit'
-import { ItemSliceType } from 'shared'
+import { CharacterSliceType } from 'shared'
 
-const initialState: ItemSliceType = {
+const initialState: CharacterSliceType = {
   items: [],
 }
 
@@ -11,11 +11,12 @@ const favoriteSlice = createSlice({
   reducers: {
     addFavorite: (state, actions) => {
       const itemId = actions.payload
-      if (!state.items.includes(itemId)) state.items.push(itemId)
+      const existingItem = state.items.find((item) => item.id === itemId)
+      if (!existingItem) state.items.push({ id: itemId, amount: 1 })
     },
     removeFavorite: (state, actions) => {
       const itemId = actions.payload
-      state.items = state.items.filter((id) => id !== itemId)
+      state.items = state.items.filter((item) => item.id !== itemId)
     },
   },
 })

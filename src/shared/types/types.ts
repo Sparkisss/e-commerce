@@ -36,6 +36,11 @@ export type CharacterFilters = {
   species?: string
 }
 
-export type ItemSliceType = {
-  items: string[]
+export type CharacterSliceItem = {
+  id: number
+  amount: number
+}
+
+export type CharacterSliceType = {
+  items: CharacterSliceItem[]
 }

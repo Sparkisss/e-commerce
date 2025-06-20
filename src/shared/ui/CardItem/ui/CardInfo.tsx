@@ -11,11 +11,11 @@ import { ItemProps } from '../model/types'
 export const CardInfo = ({ character }: ItemProps) => {
   const dispatch = useAppDispatch()
   const favorites = useAppSelector(selectedFavorItemIds)
-  const isFavorite = favorites.includes(String(character.id))
+  const isFavorite = favorites.includes(character.id)
 
   const handleClickIcon = () => {
-    if (isFavorite) dispatch(removeFavorite(String(character.id)))
-    else dispatch(addFavorite(String(character.id)))
+    if (isFavorite) dispatch(removeFavorite(character.id))
+    else dispatch(addFavorite(character.id))
   }
 
   return (

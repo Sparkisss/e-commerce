@@ -1,12 +1,12 @@
 import { useAppSelector } from 'shared/types/redux'
-import { selectedBasketItemIds } from 'entities'
+import { selectBasketItemIds } from 'entities'
 import classes from './Basket.module.css'
 import { OrderSummary } from 'widgets'
 import { ShowItems } from 'entities'
 import { Badge } from 'shared'
 
 export const Basket = () => {
-  const items = useAppSelector(selectedBasketItemIds)
+  const items = useAppSelector(selectBasketItemIds)
   return (
     <main className="container">
       <Badge amount={items.length} />
