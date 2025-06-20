@@ -9,7 +9,7 @@ export const CardItem = ({ character }: ItemProps) => {
   return (
     <article className={clsx(classes.wrapper, 'container')}>
       <CardInfo character={character} />
-      <Control />
+      <Control id={character.id} />
       <CardItemStatus characterStatus={character.status} />
     </article>
   )

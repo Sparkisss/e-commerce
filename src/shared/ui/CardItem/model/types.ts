@@ -7,3 +7,7 @@ export interface ItemProps {
 export interface StatusProps {
   characterStatus: 'alive' | 'dead' | 'unknown'
 }
+
+export interface Id {
+  id: number
+}

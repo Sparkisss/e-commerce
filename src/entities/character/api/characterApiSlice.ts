@@ -10,7 +10,7 @@ export const characterApi = createApi({
     getCharacterById: builder.query<Character, string>({
       query: (id) => `character/${id}`,
     }),
-    getMultipleCharacters: builder.query<Character[], string[]>({
+    getMultipleCharacters: builder.query<Character[], number[]>({
       query: (ids) => `character/${ids.join(' ,')}`,
     }),
     getCharacters: builder.query<

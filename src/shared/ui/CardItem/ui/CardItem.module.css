@@ -47,9 +47,39 @@
   font-weight: 900;
   font-size: 22px;
   line-height: 1.5;
+  height: 50px;
+  padding: 5px;
   letter-spacing: 0.03em;
   gap: 1em;
 }
+.control div {
+  height: 35px;
+  width: 35px;
+  display: flex;
+  justify-content: center;
+}
+
+.control > div:first-child,
+.control > div:last-child {
+  cursor: pointer;
+  border-radius: 10px;
+  transition: background-color 0.3s ease;
+}
+
+.control > .active__plus:hover {
+  background-color: rgb(105, 218, 105);
+  border: 1px solid rgb(105, 100, 100);
+}
+
+.control .active__minus:hover {
+  background-color: rgb(228, 136, 136);
+  border: 1px solid rgb(105, 100, 100);
+}
+
+.control .disable:hover {
+  opacity: 0.1;
+}
+
 .status {
   display: flex;
   justify-content: center;
