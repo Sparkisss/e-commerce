@@ -1,31 +1,45 @@
-import { MainPage, NotFound, Login, Catalogue, Basket, Selected } from 'pages'
+import { MainPage, NotFound, Auth, Catalogue, Basket, Selected } from 'pages'
 import { SingleCard } from 'entities/singleCard'
+import { AuthLayout, MainLayout } from 'widgets'
 
 export const routes = [
   {
     path: '/',
-    element: <MainPage />,
+    element: <MainLayout />,
+    children: [
+      {
+        path: '/',
+        element: <MainPage />,
+      },
+      {
+        path: '/catalogue',
+        element: <Catalogue />,
+      },
+      {
+        path: 'catalogue/:cardId',
+        element: <SingleCard />,
+      },
+      {
+        path: '/basket',
+        element: <Basket />,
+      },
+      {
+        path: '/selected',
+        element: <Selected />,
+      },
+    ],
   },
   {
-    path: '/catalogue',
-    element: <Catalogue />,
+    path: '/auth',
+    element: <AuthLayout />,
+    children: [
+      {
+        path: '/auth',
+        element: <Auth />,
+      },
+    ],
   },
-  {
-    path: 'catalogue/:cardId',
-    element: <SingleCard />,
-  },
-  {
-    path: '/basket',
-    element: <Basket />,
-  },
-  {
-    path: '/selected',
-    element: <Selected />,
-  },
-  {
-    path: '/login',
-    element: <Login />,
-  },
+
   {
     path: '*',
     element: <NotFound />,

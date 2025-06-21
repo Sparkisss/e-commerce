@@ -1,6 +1,6 @@
 export { NotFound } from './notFound'
 export { MainPage } from './mainPage'
-export { Login } from './login'
+export { Auth } from './auth'
 export { Catalogue } from './catalogue'
 export { Basket } from './basket'
 export { Selected } from './selected'
