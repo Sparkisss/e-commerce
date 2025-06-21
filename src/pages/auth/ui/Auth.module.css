@@ -1,0 +1,53 @@
+.wrap {
+  display: flex;
+  gap: var(--spacing-md);
+  padding: var(--spacing-bg);
+  background: var(--lightBlue);
+}
+.prevRegiste {
+  flex: 1 1 50%;
+  height: 80vh;
+  background: #d6d4d4 url('/images/RickAndMorty.jpg') no-repeat center / cover;
+  border-radius: var(--borderRadiusBig);
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  align-items: center;
+  padding-bottom: 2rem;
+}
+.prevAuth {
+  flex: 1 1 50%;
+  height: 80vh;
+  background: #d6d4d4 url('/images/AuthRickAmdMorty.webp') no-repeat center /
+    cover;
+  border-radius: var(--borderRadiusBig);
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  align-items: center;
+  padding-bottom: 2rem;
+}
+.prevAuth h2,
+.prevAuth div,
+.prevRegiste h2,
+.prevRegiste div {
+  background: var(--colorLight);
+  padding: var(--spacing-xs);
+}
+.content {
+  flex: 1 1 50%;
+  align-items: center;
+  justify-content: center;
+  display: flex;
+  flex-direction: column;
+}
+.content h3 {
+  margin-bottom: var(--spacing-md);
+}
+.form {
+  min-width: 19rem;
+  margin-bottom: var(--spacing-sm);
+}
+.text {
+  margin-bottom: var(--spacing-sm);
+}

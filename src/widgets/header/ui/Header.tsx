@@ -29,7 +29,7 @@ export const Header = () => {
             <Link to="/selected">SELECTED</Link>
           </li>
           <li>
-            <Link to="/login" className={classes.header__nav_btn}>
+            <Link to="/Auth" className={classes.header__nav_btn}>
               SIGN UP
             </Link>
           </li>
